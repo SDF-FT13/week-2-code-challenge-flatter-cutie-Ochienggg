@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let currentCharacter = null;
 
-    fetch("http://localhost:3000/characters")
+    fetch("https://flatacuties-server-vercel-ochiengs-projects-d19fc4ec.vercel.app/characters")
         .then(response => response.json())
         .then(characters => {
             characters.forEach(character => {
@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
         currentCharacter.votes += votesToAdd;
         voteCountElement.textContent = currentCharacter.votes;
         votesInput.value = "";
-fetch("http://localhost:3000/characters")
+fetch("https://flatacuties-server-vercel-ochiengs-projects-d19fc4ec.vercel.app/characterss")
         fetch(`/http:///characters${currentCharacter.id}`, {
             method: "PATCH",
             headers: { "Content-Type": "application/json" },
@@ -53,7 +53,7 @@ fetch("http://localhost:3000/characters")
         currentCharacter.votes = 0;
         voteCountElement.textContent = 0;
 
-        fetch(`http://localhost:3000/characters${currentCharacter.id}`, {
+        fetch(`https://flatacuties-server-vercel-ochiengs-projects-d19fc4ec.vercel.app/characters${currentCharacter.id}`, {
             method: "PATCH",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ votes: 0 })
